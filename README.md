@@ -35,6 +35,7 @@ El proyecto se divide en tres scripts principales que deben ejecutarse en orden:
     *   **Estimación:** Realiza una estimación preliminar utilizando el estimador de Dobles Diferencias (TWFE) con el paquete `fixest`.
 *   **Inputs:** Toma como base el shapefile "manzanas.shp"
 *   **Outputs:** Genera Shapefile "simulación.shp", ubicado en "data/final"
+*   **Nota:** Los archivos SHP y DBF resultado de este código superaron el límite de 100 MB y por ende fueron agregados a GitIgnore. 
 
 
 ### 3. Estimaciones
