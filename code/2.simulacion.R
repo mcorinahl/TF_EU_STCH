@@ -263,7 +263,7 @@ panel <- panel %>%
 
 panel <- panel %>%
   mutate(
-    log_price = 10 + year_fe + manzana_fe + 0.20 * viol_pc + te + eps,
+    log_price = 10 + year_fe + manzana_fe - 0.20 * viol_pc + te + eps,
     treatment = as.integer(treated == 1 & year >= treat_year)
   )
 
@@ -288,7 +288,7 @@ panel <- panel %>%
     dumm_sales = as.integer(sells >= 0.45),
     
     # Simulamos el log del precio de venta -- asume ef de año, de manzana, y asume el efecto de tratamiento, con error AR1. 
-    log_price_sales = 10 + year_fe + manzana_fe + 0.20 * viol_pc + tesal + eps,
+    log_price_sales = 10 + year_fe + manzana_fe - 0.20 * viol_pc + tesal + eps,
     
     # Dejamos en missing las observaciones que se sacan para ventas
     log_price_sales = ifelse(dumm_sales == 1, NA_real_, log_price_sales)
